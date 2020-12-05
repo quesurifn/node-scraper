@@ -36,7 +36,7 @@ const { Cluster } = require('puppeteer-cluster');
                 'Content-Type': 'text/html',
                 'Content-Length': html.length
             });
-            res.end(screen);
+            res.end(html);
         } catch (err) {
             res.end('Error: ' + err.message);
         }
