@@ -27,11 +27,6 @@ const { Cluster } = require('puppeteer-cluster');
 
     // setup server
     app.get('/', async (req, res) => {
-
-        if(!req.headers.authorization || !req.headers.authorization.split(' ')[1] === 'KyleCameronRyanFahey') {
-          res.end('Not authorized')
-        }
-
         if (!req.query.url) {
             return res.end('Please specify url like this: ?url=example.com');
         }
