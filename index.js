@@ -26,6 +26,9 @@ async function main() {
     puppeteer,
     maxConcurrency: 5,
     concurrency: Cluster.CONCURRENCY_CONTEXT,
+    puppeteerOptions: {
+      product: 'chrome'
+    }
   })
 
   // Define task handler
@@ -40,7 +43,7 @@ async function main() {
     });
     await page.goto(url)
     const { captchas } = await page.findRecaptchas()
-    console.log(`Found ${captchas.length} captcha on ${hostname}`)
+    console.log(`Found ${captchas.length} captcha`)
     if(captchas.length) {
       await page.solveRecaptchas()
     }

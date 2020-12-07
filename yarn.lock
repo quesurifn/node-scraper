@@ -39,6 +39,11 @@
   "resolved" "https://registry.npmjs.org/agent-base/-/agent-base-5.1.1.tgz"
   "version" "5.1.1"
 
+"app-root-path@^3.0.0":
+  "integrity" "sha512-qMcx+Gy2UZynHjOHOIXPNvpf+9cjvk3cWrBBK7zg4gH9+clobJRb9NGzcT7mQTcV/6Gm/1WelUtqxVXnNlrwcw=="
+  "resolved" "https://registry.npmjs.org/app-root-path/-/app-root-path-3.0.0.tgz"
+  "version" "3.0.0"
+
 "arr-union@^3.1.0":
   "integrity" "sha1-45sJrqne+Gao8gbiiK9jkZuuOcQ="
   "resolved" "https://registry.npmjs.org/arr-union/-/arr-union-3.1.0.tgz"
@@ -673,7 +678,7 @@
     "debug" "^4.1.1"
     "deepmerge" "^4.2.2"
 
-"puppeteer@^5.5.0":
+"puppeteer@^5.4.0":
   "integrity" "sha512-OM8ZvTXAhfgFA7wBIIGlPQzvyEETzDjeRa4mZRCRHxYL+GNH5WAuYUQdja3rpWZvkX/JKqmuVgbsxDNsDFjMEg=="
   "resolved" "https://registry.npmjs.org/puppeteer/-/puppeteer-5.5.0.tgz"
   "version" "5.5.0"
