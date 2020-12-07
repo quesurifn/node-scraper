@@ -11,6 +11,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "puppeteer": "^5.5.0",
-    "puppeteer-cluster": "^0.22.0"
+    "puppeteer-cluster": "^0.22.0",
+    "puppeteer-extra": "^3.1.15",
+    "puppeteer-extra-plugin-recaptcha": "^3.3.0",
+    "puppeteer-extra-plugin-stealth": "^2.6.5"
   }
 }
