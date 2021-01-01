@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
 
+const { configurePage } = require('./helpers/index')
 const { Cluster } = require('puppeteer-cluster')
 const vanillaPuppeteer = require('puppeteer')
 
 const { addExtra } = require('puppeteer-extra')
 const Stealth = require('puppeteer-extra-plugin-stealth')
 const Recaptcha = require('puppeteer-extra-plugin-recaptcha')
+
 
 async function main() {
   // Create a custom puppeteer-extra instance using `addExtra`,
@@ -33,20 +35,7 @@ async function main() {
 
   // Define task handler
   await cluster.task(async ({ page, data: url }) => {
-    await page.setRequestInterception(true);
-    page.on('request', (req) => {
-      if(req.resourceType() == 'stylesheet' || req.resourceType() == 'font' || req.resourceType() == 'image'){
-        req.abort();
-      } else {
-        req.continue();
-      }
-    });
-    await page.goto(url)
-    const { captchas } = await page.findRecaptchas()
-    console.log(`Found ${captchas.length} captcha`)
-    if(captchas.length) {
-      await page.solveRecaptchas()
-    }
+    await configurePage(page, url)
     const html = await page.evaluate(() => document.querySelector('*').outerHTML);
     return html;
   })
