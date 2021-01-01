@@ -29,7 +29,8 @@ async function main() {
     maxConcurrency: 5,
     concurrency: Cluster.CONCURRENCY_CONTEXT,
     puppeteerOptions: {
-      product: 'chrome'
+      product: 'chrome',
+      headless: false
     }
   })
 
