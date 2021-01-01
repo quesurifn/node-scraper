@@ -51,8 +51,10 @@ const configurePage = async (page, url) => {
   //Skip images/styles/fonts loading for performance
   await page.setRequestInterception(true);
   page.on('request', (req) => {
+    console.log(req.resourceType())
       if(req.resourceType() == 'stylesheet' || req.resourceType() == 'font' || req.resourceType() == 'image'){
           req.abort();
+          console.log('aborted')
       } else {
           req.continue();
       }

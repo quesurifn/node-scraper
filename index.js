@@ -36,8 +36,8 @@ async function main() {
 
   // Define task handler
   await cluster.task(async ({ page, data: url }) => {
-    await configurePage(page, url)
-    const html = await page.evaluate(() => document.querySelector('*').outerHTML);
+    const p = await configurePage(page, url)
+    const html = await p.evaluate(() => document.querySelector('*').outerHTML);
     return html;
   })
 
